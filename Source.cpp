@@ -28,7 +28,7 @@ int main(int argc, char **argv)
   std::string msgReceived;
   int robotSocket; 
   /************************************************************/
-  /* Windows �Ǝ��̐ݒ� */
+  /* Windows “ÆŽ©‚ÌÝ’è */
   WSADATA data;
   WSAStartup(MAKEWORD(2,0), &data);
 
@@ -107,7 +107,7 @@ int main(int argc, char **argv)
   //Close communication with ABB controller
   sockSend(robotSocket, oad::closeConnection());
   Sleep(1);
-  _close(robotSocket);
+  closesocket(robotSocket);
 
   return 0;
 }
